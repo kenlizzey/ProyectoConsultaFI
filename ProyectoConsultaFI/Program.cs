@@ -11,12 +11,13 @@ namespace ProyectoConsultaFI
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        public static Form1 consultaFI; //Se crea un formulario estático (el principal). 
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(consultaFI = new Form1());
         }
     }
 }
