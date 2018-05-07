@@ -22,6 +22,7 @@ namespace ProyectoConsultaFI
         private void btnCuestionario_Click(object sender, EventArgs e)
         {
             Cuestionario nuevoCuestionario = new Cuestionario();
+            MessageBox.Show("Instrucciones");
             nuevoCuestionario.Show();
             Program.consultaFI.Hide();
         }
