@@ -34,7 +34,6 @@
             this.radboC = new System.Windows.Forms.RadioButton();
             this.radboB = new System.Windows.Forms.RadioButton();
             this.btnSiguiente = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.TiempoCuestionario = new System.Windows.Forms.Timer(this.components);
             this.Minutos = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,15 +91,6 @@
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 231);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
             // TiempoCuestionario
             // 
             this.TiempoCuestionario.Interval = 50;
@@ -142,7 +132,6 @@
             this.Controls.Add(this.Segundos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Minutos);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.radboC);
             this.Controls.Add(this.radboA);
             this.Controls.Add(this.radboB);
@@ -164,7 +153,6 @@
         private System.Windows.Forms.RadioButton radboC;
         private System.Windows.Forms.RadioButton radboB;
         private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer TiempoCuestionario;
         private System.Windows.Forms.Label Minutos;
         private System.Windows.Forms.Label label3;

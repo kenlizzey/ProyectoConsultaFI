@@ -10,6 +10,7 @@ namespace ProyectoConsultaFI
         private string r2;
         private string r3;
         private string rcorrecta;
+        private char tema;
         
         public string Pregunta
         {
@@ -111,13 +112,34 @@ namespace ProyectoConsultaFI
             }
         }
 
-        public PreguntasDelCuestionaro(string Pregunta, string R1, string R2, string R3, string rCorrecta)
+        public char Tema
+        {
+            get
+            {
+                return tema;
+            }
+            set
+            {
+                if (value == ' ')
+                {
+                    value = 'E';
+                }
+                else
+                {
+                    tema = value;
+                }
+
+            }
+        }
+
+        public PreguntasDelCuestionaro(string Pregunta, string R1, string R2, string R3, string rCorrecta, char Tema)
         {
             this.Pregunta = Pregunta;
             this.R1 = R1;
             this.R2 = R2;
             this.R3 = R3;
             this.rCorrecta = rCorrecta;
+            this.Tema = Tema;
         }
 
  

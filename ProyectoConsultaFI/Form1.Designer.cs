@@ -36,7 +36,7 @@
             // 
             // btnAgregarDocumento
             // 
-            this.btnAgregarDocumento.Location = new System.Drawing.Point(143, 175);
+            this.btnAgregarDocumento.Location = new System.Drawing.Point(36, 41);
             this.btnAgregarDocumento.Name = "btnAgregarDocumento";
             this.btnAgregarDocumento.Size = new System.Drawing.Size(101, 37);
             this.btnAgregarDocumento.TabIndex = 0;
@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(166, 34);
+            this.label1.Location = new System.Drawing.Point(395, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btnCuestionario
             // 
-            this.btnCuestionario.Location = new System.Drawing.Point(143, 133);
+            this.btnCuestionario.Location = new System.Drawing.Point(74, 174);
             this.btnCuestionario.Name = "btnCuestionario";
             this.btnCuestionario.Size = new System.Drawing.Size(101, 24);
             this.btnCuestionario.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // btnRepaso
             // 
-            this.btnRepaso.Location = new System.Drawing.Point(143, 85);
+            this.btnRepaso.Location = new System.Drawing.Point(63, 111);
             this.btnRepaso.Name = "btnRepaso";
             this.btnRepaso.Size = new System.Drawing.Size(101, 23);
             this.btnRepaso.TabIndex = 0;
@@ -77,11 +77,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 261);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(892, 401);
             this.Controls.Add(this.btnCuestionario);
             this.Controls.Add(this.btnRepaso);
             this.Controls.Add(this.btnAgregarDocumento);
+            this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta FI";
