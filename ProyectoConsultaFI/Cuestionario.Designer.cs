@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lbPregunta = new System.Windows.Forms.Label();
             this.radboA = new System.Windows.Forms.RadioButton();
             this.radboC = new System.Windows.Forms.RadioButton();
@@ -38,6 +41,8 @@
             this.Minutos = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Segundos = new System.Windows.Forms.Label();
+            this.GraficaPuntosCorrectos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaPuntosCorrectos)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPregunta
@@ -62,7 +67,7 @@
             // radboC
             // 
             this.radboC.AutoSize = true;
-            this.radboC.Location = new System.Drawing.Point(415, 155);
+            this.radboC.Location = new System.Drawing.Point(482, 155);
             this.radboC.Name = "radboC";
             this.radboC.Size = new System.Drawing.Size(34, 17);
             this.radboC.TabIndex = 1;
@@ -83,7 +88,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(415, 269);
+            this.btnSiguiente.Location = new System.Drawing.Point(568, 347);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(112, 23);
             this.btnSiguiente.TabIndex = 2;
@@ -124,11 +129,28 @@
             this.Segundos.TabIndex = 5;
             this.Segundos.Text = "--";
             // 
+            // GraficaPuntosCorrectos
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.GraficaPuntosCorrectos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.GraficaPuntosCorrectos.Legends.Add(legend1);
+            this.GraficaPuntosCorrectos.Location = new System.Drawing.Point(172, 33);
+            this.GraficaPuntosCorrectos.Name = "GraficaPuntosCorrectos";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.GraficaPuntosCorrectos.Series.Add(series1);
+            this.GraficaPuntosCorrectos.Size = new System.Drawing.Size(300, 300);
+            this.GraficaPuntosCorrectos.TabIndex = 6;
+            this.GraficaPuntosCorrectos.Text = "chart1";
+            // 
             // Cuestionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 316);
+            this.ClientSize = new System.Drawing.Size(692, 398);
+            this.Controls.Add(this.GraficaPuntosCorrectos);
             this.Controls.Add(this.Segundos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Minutos);
@@ -141,6 +163,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cuestionario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cuestionario_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.GraficaPuntosCorrectos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +180,6 @@
         private System.Windows.Forms.Label Minutos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Segundos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GraficaPuntosCorrectos;
     }
 }

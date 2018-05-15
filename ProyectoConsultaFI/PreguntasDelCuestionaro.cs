@@ -10,7 +10,7 @@ namespace ProyectoConsultaFI
         private string r2;
         private string r3;
         private string rcorrecta;
-        private char tema;
+        private int tema;
         
         public string Pregunta
         {
@@ -112,7 +112,7 @@ namespace ProyectoConsultaFI
             }
         }
 
-        public char Tema
+        public int Tema
         {
             get
             {
@@ -120,9 +120,9 @@ namespace ProyectoConsultaFI
             }
             set
             {
-                if (value == ' ')
+                if (value == 0)
                 {
-                    value = 'E';
+                    value = -1;
                 }
                 else
                 {
@@ -132,7 +132,7 @@ namespace ProyectoConsultaFI
             }
         }
 
-        public PreguntasDelCuestionaro(string Pregunta, string R1, string R2, string R3, string rCorrecta, char Tema)
+        public PreguntasDelCuestionaro(string Pregunta, string R1, string R2, string R3, string rCorrecta, int Tema)
         {
             this.Pregunta = Pregunta;
             this.R1 = R1;
@@ -142,10 +142,7 @@ namespace ProyectoConsultaFI
             this.Tema = Tema;
         }
 
- 
 
-
-        //Un método para checar la respuesta correcta
 
 
     }

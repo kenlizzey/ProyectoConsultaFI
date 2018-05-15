@@ -32,11 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCuestionario = new System.Windows.Forms.Button();
             this.btnRepaso = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregarDocumento
             // 
-            this.btnAgregarDocumento.Location = new System.Drawing.Point(36, 41);
+            this.btnAgregarDocumento.Location = new System.Drawing.Point(3, 75);
             this.btnAgregarDocumento.Name = "btnAgregarDocumento";
             this.btnAgregarDocumento.Size = new System.Drawing.Size(101, 37);
             this.btnAgregarDocumento.TabIndex = 0;
@@ -47,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(395, 9);
+            this.label1.Location = new System.Drawing.Point(448, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 1;
@@ -55,7 +60,7 @@
             // 
             // btnCuestionario
             // 
-            this.btnCuestionario.Location = new System.Drawing.Point(74, 174);
+            this.btnCuestionario.Location = new System.Drawing.Point(4, 281);
             this.btnCuestionario.Name = "btnCuestionario";
             this.btnCuestionario.Size = new System.Drawing.Size(101, 24);
             this.btnCuestionario.TabIndex = 0;
@@ -65,7 +70,7 @@
             // 
             // btnRepaso
             // 
-            this.btnRepaso.Location = new System.Drawing.Point(63, 111);
+            this.btnRepaso.Location = new System.Drawing.Point(4, 193);
             this.btnRepaso.Name = "btnRepaso";
             this.btnRepaso.Size = new System.Drawing.Size(101, 23);
             this.btnRepaso.TabIndex = 0;
@@ -73,20 +78,49 @@
             this.btnRepaso.UseVisualStyleBackColor = true;
             this.btnRepaso.Click += new System.EventHandler(this.btnRepaso_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnAgregarDocumento);
+            this.panel1.Controls.Add(this.btnCuestionario);
+            this.panel1.Controls.Add(this.btnRepaso);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(105, 492);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(105, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(976, 35);
+            this.panel2.TabIndex = 3;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(105, 35);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(976, 457);
+            this.panelContenedor.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 401);
-            this.Controls.Add(this.btnCuestionario);
-            this.Controls.Add(this.btnRepaso);
-            this.Controls.Add(this.btnAgregarDocumento);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1081, 492);
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta FI";
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -96,6 +130,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCuestionario;
         private System.Windows.Forms.Button btnRepaso;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }
 
