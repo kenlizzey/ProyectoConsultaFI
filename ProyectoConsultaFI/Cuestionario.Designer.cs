@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lbPregunta = new System.Windows.Forms.Label();
             this.radboA = new System.Windows.Forms.RadioButton();
             this.radboC = new System.Windows.Forms.RadioButton();
@@ -45,6 +45,8 @@
             this.GraficaPuntosCorrectos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelPreguntas = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.GraficaPuntosCorrectos)).BeginInit();
             this.panelPreguntas.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             this.radboA.AutoSize = true;
             this.radboA.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radboA.Location = new System.Drawing.Point(112, 74);
+            this.radboA.Location = new System.Drawing.Point(68, 74);
             this.radboA.Name = "radboA";
             this.radboA.Size = new System.Drawing.Size(45, 22);
             this.radboA.TabIndex = 1;
@@ -76,7 +78,7 @@
             // 
             this.radboC.AutoSize = true;
             this.radboC.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radboC.Location = new System.Drawing.Point(875, 74);
+            this.radboC.Location = new System.Drawing.Point(831, 74);
             this.radboC.Name = "radboC";
             this.radboC.Size = new System.Drawing.Size(40, 22);
             this.radboC.TabIndex = 1;
@@ -88,7 +90,7 @@
             // 
             this.radboB.AutoSize = true;
             this.radboB.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radboB.Location = new System.Drawing.Point(513, 74);
+            this.radboB.Location = new System.Drawing.Point(469, 74);
             this.radboB.Name = "radboB";
             this.radboB.Size = new System.Drawing.Size(41, 22);
             this.radboB.TabIndex = 1;
@@ -98,9 +100,12 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(513, 150);
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Location = new System.Drawing.Point(501, 150);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(112, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(124, 23);
             this.btnSiguiente.TabIndex = 2;
             this.btnSiguiente.Text = "Siguiente Pregunta";
             this.btnSiguiente.UseVisualStyleBackColor = true;
@@ -141,27 +146,30 @@
             // 
             // GraficaPuntosCorrectos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.GraficaPuntosCorrectos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.GraficaPuntosCorrectos.Legends.Add(legend1);
-            this.GraficaPuntosCorrectos.Location = new System.Drawing.Point(139, 299);
+            chartArea2.Name = "ChartArea1";
+            this.GraficaPuntosCorrectos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.GraficaPuntosCorrectos.Legends.Add(legend2);
+            this.GraficaPuntosCorrectos.Location = new System.Drawing.Point(72, 106);
             this.GraficaPuntosCorrectos.Name = "GraficaPuntosCorrectos";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Temas";
-            this.GraficaPuntosCorrectos.Series.Add(series1);
-            this.GraficaPuntosCorrectos.Size = new System.Drawing.Size(557, 265);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Temas";
+            this.GraficaPuntosCorrectos.Series.Add(series2);
+            this.GraficaPuntosCorrectos.Size = new System.Drawing.Size(466, 367);
             this.GraficaPuntosCorrectos.TabIndex = 6;
             this.GraficaPuntosCorrectos.Text = "chart1";
-            title1.Name = "Temas.";
-            this.GraficaPuntosCorrectos.Titles.Add(title1);
+            title2.Name = "Temas.";
+            this.GraficaPuntosCorrectos.Titles.Add(title2);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1003, 413);
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Location = new System.Drawing.Point(990, 413);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(88, 23);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -169,6 +177,7 @@
             // 
             // panelPreguntas
             // 
+            this.panelPreguntas.Controls.Add(this.panel2);
             this.panelPreguntas.Controls.Add(this.radboB);
             this.panelPreguntas.Controls.Add(this.radboC);
             this.panelPreguntas.Controls.Add(this.btnSiguiente);
@@ -181,12 +190,29 @@
             this.panelPreguntas.Size = new System.Drawing.Size(1139, 201);
             this.panelPreguntas.TabIndex = 8;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Firebrick;
+            this.panel2.Location = new System.Drawing.Point(498, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(12, 23);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Location = new System.Drawing.Point(987, 413);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 22);
+            this.panel1.TabIndex = 9;
+            // 
             // Cuestionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
             this.ClientSize = new System.Drawing.Size(1142, 615);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPreguntas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lbPregunta);
@@ -209,12 +235,14 @@
         private System.Windows.Forms.RadioButton radboC;
         private System.Windows.Forms.RadioButton radboB;
         private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Timer TiempoCuestionario;
         private System.Windows.Forms.Label Minutos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Segundos;
         private System.Windows.Forms.DataVisualization.Charting.Chart GraficaPuntosCorrectos;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panelPreguntas;
+        public System.Windows.Forms.Timer TiempoCuestionario;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

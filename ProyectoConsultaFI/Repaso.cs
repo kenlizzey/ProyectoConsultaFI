@@ -7,8 +7,10 @@ namespace ProyectoConsultaFI
 {
     public partial class Repaso : Form
     {
+       
         public Repaso()
         {
+            
             InitializeComponent();
         }
 
@@ -21,5 +23,13 @@ namespace ProyectoConsultaFI
         {
             this.Close();
         }
+
+
+       
+
+
+
+
+
     }
 }

@@ -21,14 +21,15 @@ namespace ProyectoConsultaFI
 
         private void btnCuestionario_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Instrucciones. ");
+            MessageBox.Show("Instrucciones: El cuestionario contiene 10 preguntas de los 4 temas disponibles. Cuentas con 20 minutos para terminar el cuestionario; " +
+                "terminas el el tiempo establecido, el puntaje final será el que llevases al momento en que se acabara el tiempo.  Si sales del cuestionario antes de obtener tus resultados, estos se perderán y tendrás que empezar de nuevo. ");
             AbrirFormHijo(new Cuestionario(this));
             btnCuestionario.Enabled = false;
         }
 
         private void btnAgregarDocumento_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new AgregarDocumento());
+            AbrirFormHijo(new AgregarDocumento(this));
         }
 
         //Función para mostrar los formularios en el panel

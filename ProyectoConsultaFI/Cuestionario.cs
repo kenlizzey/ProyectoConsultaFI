@@ -9,6 +9,7 @@ namespace ProyectoConsultaFI
 {
     public partial class Cuestionario : Form
     {
+
         //Se crea el cuestionario y se muestra la primer pregunta en pantalla.
         Form1 formPadre;
         public byte CerrarNoCerrar;
@@ -105,7 +106,7 @@ namespace ProyectoConsultaFI
                 //Graficando();
                 GraficaPuntosCorrectos.Show();
                 int[] MisErrores = TemasIncorrectos(incorrecta);
-                GraficaPuntosCorrectos.Palette = ChartColorPalette.BrightPastel;
+                GraficaPuntosCorrectos.Titles.Add("Temas en que has tenido errores.");
                 GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 1", MisErrores[0]);
                 GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 2", MisErrores[1]);
                 GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 3", MisErrores[2]);
@@ -194,23 +195,12 @@ namespace ProyectoConsultaFI
             return Temas; 
         }
 
-        /*
-        public void Graficando()
-        {
-            int[] MisErrores = TemasIncorrectos(incorrecta);
-            GraficaPuntosCorrectos.Palette = ChartColorPalette.BrightPastel;
-            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 1", MisErrores[0]);
-            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 2", MisErrores[1]);
-            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 3", MisErrores[2]);
-            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 4", MisErrores[3]);
-
-            
-    
-
-        }*/
+      
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            SalirCuestionario Salir = new SalirCuestionario(this, formPadre);
+            
             if (lbPregunta.Text.Contains("Tuviste"))
             {
                 TiempoCuestionario.Stop();
@@ -219,22 +209,12 @@ namespace ProyectoConsultaFI
             }
             else
             {
-                SalirCuestionario Salir = new SalirCuestionario(this);
+                this.Enabled = false;
+                TiempoCuestionario.Stop();
                 Salir.Show();
-                switch (CerrarNoCerrar)
-                {
-                    case 1:
-                        TiempoCuestionario.Stop();
-                        this.Close();
-                        formPadre.btnCuestionario.Enabled = true;
-                        break;
-                    case 0:
-
-                        break;
-                }
-                
             }
-           
+
+
         }
     }
 }

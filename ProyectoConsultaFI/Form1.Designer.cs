@@ -158,7 +158,7 @@
             this.btnAgregarDocumento.Name = "btnAgregarDocumento";
             this.btnAgregarDocumento.Size = new System.Drawing.Size(155, 40);
             this.btnAgregarDocumento.TabIndex = 0;
-            this.btnAgregarDocumento.Text = "Agregar Documento";
+            this.btnAgregarDocumento.Text = "Agregar Notas";
             this.btnAgregarDocumento.UseVisualStyleBackColor = false;
             this.btnAgregarDocumento.Click += new System.EventHandler(this.btnAgregarDocumento_Click);
             // 
@@ -258,9 +258,9 @@
         private System.Windows.Forms.Button btnAgregarDocumento;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnRepaso;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel miPanelContenedor;
         public System.Windows.Forms.Button btnCuestionario;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel miPanelContenedor;
     }
 }
 

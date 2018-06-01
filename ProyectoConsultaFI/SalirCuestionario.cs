@@ -6,22 +6,35 @@ namespace ProyectoConsultaFI
 {
     public partial class SalirCuestionario : Form
     {
+        
         Cuestionario formPadre;
-        public SalirCuestionario(Cuestionario formPadre)
+        Form1 SuperPadre;
+        public SalirCuestionario(Cuestionario formPadre, Form1 SuperPadre)
         {
             this.formPadre = formPadre;
+            this.SuperPadre = SuperPadre;
             InitializeComponent();
         }
 
         private void btnSi_Click(object sender, EventArgs e)
         {
-            formPadre.CerrarNoCerrar = 1;
+            formPadre.TiempoCuestionario.Stop();
+            formPadre.Close();
+            SuperPadre.btnCuestionario.Enabled = true; 
             this.Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            formPadre.CerrarNoCerrar = 0;
+            formPadre.Enabled = true;
+            formPadre.TiempoCuestionario.Start();
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            formPadre.Enabled = true;
+            formPadre.TiempoCuestionario.Start();
             this.Close();
         }
     }
