@@ -21,7 +21,7 @@ namespace ProyectoConsultaFI
         byte puntaje = 0;
 
         //Se crea una lista de 20 elementos [índices de 0 a 19]
-        List<int> Numeros = new List<int>() { 20, 1, 19, 2, 18, 3, 17, 4, 16, 5, 15, 6, 14, 7, 13, 8, 12, 9, 11, 10 };
+        List<int> Numeros = new List<int>() { 10, 1, 19, 2, 18, 3, 17, 4, 16, 5, 15, 6, 14, 7, 13, 8, 12, 9, 11, 0 };
 
         //Aquí se almacenan los temas dependiendo de la respuesta incorrecta.
         int[] incorrecta = new int[10];

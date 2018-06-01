@@ -8,10 +8,15 @@ using System.Windows.Forms.DataVisualization.Charting;
 namespace ProyectoConsultaFI
 {
     public partial class Cuestionario : Form
-    {       
+    {
         //Se crea el cuestionario y se muestra la primer pregunta en pantalla.
-        public Cuestionario()
+        Form1 formPadre;
+        public byte CerrarNoCerrar;
+        public Cuestionario(Form1 formPadre)
         {
+            this.formPadre = formPadre;
+            MdiParent = formPadre;
+
             ConstruirCuestionario();
 
             PreguntasDelCuestionaro MostrarPregunta = (PreguntasDelCuestionaro)Preguntas[Numeros[NumeroPregunta]];
@@ -21,20 +26,13 @@ namespace ProyectoConsultaFI
             TiempoCuestionario.Start();
 
             Minutos.Text = "19";
-
-            lbPregunta.Text = (++NumeroPregunta).ToString() + "-. " + MostrarPregunta.Pregunta;
+            //++NumeroPregunta
+            lbPregunta.Text = (1).ToString() + "-. " + MostrarPregunta.Pregunta;
             radboA.Text = "A) " + MostrarPregunta.R1;
             radboB.Text = "B) " + MostrarPregunta.R2;
             radboC.Text = "C) " + MostrarPregunta.R3;
 
             GraficaPuntosCorrectos.Hide();
-        }
-
-        //Cuando el usuario cierra el cuestionario. 
-        private void Cuestionario_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            TiempoCuestionario.Stop();
-            Program.consultaFI.Show();
         }
 
 
@@ -102,17 +100,16 @@ namespace ProyectoConsultaFI
             else
             {
                 TiempoCuestionario.Stop();
-                lbPregunta.Text = "Tuviste " + puntaje.ToString() + "respuestas correctas"; 
-                radboA.Hide();
-                radboB.Hide();
-                radboC.Hide();
-                Minutos.Hide();
-                Segundos.Hide();
-                label3.Hide();
-                btnSiguiente.Hide();
-
-                Graficando();
-
+                lbPregunta.Text = "Tuviste " + puntaje.ToString() + " respuestas correctas.";
+                panelPreguntas.Hide();
+                //Graficando();
+                GraficaPuntosCorrectos.Show();
+                int[] MisErrores = TemasIncorrectos(incorrecta);
+                GraficaPuntosCorrectos.Palette = ChartColorPalette.BrightPastel;
+                GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 1", MisErrores[0]);
+                GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 2", MisErrores[1]);
+                GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 3", MisErrores[2]);
+                GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 4", MisErrores[3]);
             }
         }
 
@@ -197,22 +194,47 @@ namespace ProyectoConsultaFI
             return Temas; 
         }
 
+        /*
         public void Graficando()
         {
-            GraficaPuntosCorrectos.Show();
-            string[] Temas = { "Tema 1", "Tema 2", "Tema 3", "Tema 4" };
             int[] MisErrores = TemasIncorrectos(incorrecta);
             GraficaPuntosCorrectos.Palette = ChartColorPalette.BrightPastel;
-            GraficaPuntosCorrectos.Titles.Add("Temas en los que te has equivocado");
+            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 1", MisErrores[0]);
+            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 2", MisErrores[1]);
+            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 3", MisErrores[2]);
+            GraficaPuntosCorrectos.Series["Temas"].Points.AddXY("Tema 4", MisErrores[3]);
 
-            for (int i = 0; i < Temas.Length; i++)
+            
+    
+
+        }*/
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (lbPregunta.Text.Contains("Tuviste"))
             {
-                Series LosTemas = GraficaPuntosCorrectos.Series.Add(Temas[i]);
-                LosTemas.Label = MisErrores[i].ToString();
-                LosTemas.Points.Add(MisErrores[i]);
+                TiempoCuestionario.Stop();
+                this.Close();
+                formPadre.btnCuestionario.Enabled = true;
             }
+            else
+            {
+                SalirCuestionario Salir = new SalirCuestionario(this);
+                Salir.Show();
+                switch (CerrarNoCerrar)
+                {
+                    case 1:
+                        TiempoCuestionario.Stop();
+                        this.Close();
+                        formPadre.btnCuestionario.Enabled = true;
+                        break;
+                    case 0:
 
+                        break;
+                }
+                
+            }
+           
         }
-
     }
 }

@@ -21,8 +21,9 @@ namespace ProyectoConsultaFI
 
         private void btnCuestionario_Click(object sender, EventArgs e)
         {
-
-            AbrirFormHijo(new Cuestionario());
+            MessageBox.Show("Instrucciones. ");
+            AbrirFormHijo(new Cuestionario(this));
+            btnCuestionario.Enabled = false;
         }
 
         private void btnAgregarDocumento_Click(object sender, EventArgs e)

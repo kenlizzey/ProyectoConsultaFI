@@ -55,11 +55,13 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(531, 9);
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(591, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(117, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consulta FI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BarraTitulo
             // 
@@ -229,6 +231,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta FI";
@@ -254,10 +257,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAgregarDocumento;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnCuestionario;
         private System.Windows.Forms.Button btnRepaso;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel miPanelContenedor;
+        public System.Windows.Forms.Button btnCuestionario;
     }
 }
 
